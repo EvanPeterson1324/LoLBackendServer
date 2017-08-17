@@ -9,8 +9,9 @@ import {
   // print                   // simple callback function that prints the error or data
 } from 'kindred-api'
 
-const k = new Kindred({ key: 'RGAPI-4819d46c-6e43-41bf-8a6d-b9b22038206d' });
-
+const k = new Kindred({ key: process.env.LEAGUE_API_KEY });
+console.log("Key: ", process.env.LEAGUE_API_KEY);
+)
 const routes = Router();
 
 routes.get('/', (req, res) => {

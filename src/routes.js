@@ -10,10 +10,19 @@ import {
 } from 'kindred-api'
 
 const k = new Kindred({ key: process.env.LEAGUE_API_KEY });
-console.log("Key: ", process.env.LEAGUE_API_KEY);
 const routes = Router();
 
+routes.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 routes.get('/', (req, res) => {
+  res.render('index', { title: 'Progress.gg API!' });
+});
+
+routes.get('/api', (req, res) => {
   res.render('index', { title: 'Progress.gg API!' });
 });
 

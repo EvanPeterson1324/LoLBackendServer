@@ -11,7 +11,6 @@ import {
 
 const k = new Kindred({ key: process.env.LEAGUE_API_KEY });
 console.log("Key: ", process.env.LEAGUE_API_KEY);
-)
 const routes = Router();
 
 routes.get('/', (req, res) => {
